@@ -1,0 +1,16 @@
+{
+  "name": "premier-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"je test mon app\"",
+    "start": "node index.js",
+    "build": "echo \"Je build mon app\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
