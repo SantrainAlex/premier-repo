@@ -2,10 +2,16 @@ name: Premier workflox
 on: workflow_dispatch
 jobs:
   premier-job:
+    name: Mon premier job
     runs-on: ubuntu-latest
     steps:
       - name: Dit bonjour
         run: echo "Hello workd!"
       - name: Dit au revoir
         run: echo "Bye"
+  deuxiem-job:
+    name: Mon deuxième job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Je suis un deuxième job"
       
