@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: sans variable d'env
-        run: echo ouvelle issue - {{github.event.issue.title}}
+        run: echo ouvelle issue - ${{github.event.issue.title}}
       - name: avec variable d'env
         env:
           TITRE: ${{github.event.issue.title}}
