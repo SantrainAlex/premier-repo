@@ -8,6 +8,7 @@ jobs:
       - id: etape1
         name: Set VAR1
         run: echo "VAR1=Hello" >> $GITHUB_OUTPUT
+      - id: etape2
         name: Set VAR2
         run: echo "VAR2=world" >> $GITHUB_OUTPUT
       - id:  etape3
