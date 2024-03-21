@@ -15,4 +15,11 @@ jobs:
   output:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ouvelle issue - {{github.event.issue.title}}
+      - name: sans variable d'env
+        run: echo ouvelle issue - {{github.event.issue.title}}
+      - name: avec variable d'env
+        env:
+          TITRE: ${{github.event.issue.title}}
+        run: |
+          echo Nouvelle issue = "$TITRE"
+          echo "L'utilisateur d'une variable d'en intermédiaire atténue le risque d'injection de code"
