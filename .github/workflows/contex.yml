@@ -2,6 +2,6 @@ name: Ouput le contenu context GitHub
 on: workflow_dispatch
 jobs:
   info:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "${{ toJSON(github)}}"
