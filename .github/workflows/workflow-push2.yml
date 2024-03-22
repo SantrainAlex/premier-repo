@@ -39,4 +39,4 @@ jobs:
       - name: test
         run: echo "$NEEDS_JSON"
         env:
-          NEEDS_JSON: ${{toJSON(needs.result)}}
+          NEEDS_JSON: ${{toJSON(needs.mon_job.result)}}
