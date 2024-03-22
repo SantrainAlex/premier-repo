@@ -16,4 +16,4 @@ jobs:
       - name: Affiche le contenue de needs
         run: echo "$NEEDS_JSON"
         env:
-          NEEDS_JSON: ${{ toJSON(need)}}
+          NEEDS_JSON: ${{ toJSON(needs)}}
