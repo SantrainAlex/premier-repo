@@ -24,8 +24,8 @@ jobs:
         run: npm run build
       - id: test
         name: set test
-        run: |
-          npm run test
+        run: npm run test
+      - run: eco {{steps.test.outcome}}
       - name: start
         run: npm run start
       - name: Sommaire
