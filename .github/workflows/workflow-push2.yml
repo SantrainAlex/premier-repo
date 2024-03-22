@@ -5,7 +5,7 @@ jobs:
     name: Build teste et run mon app
     runs-on: ubuntu-latest
     outputs:
-      sortie1: ${{steps.test}}
+      sortie1: ${{steps}}
     steps:
       - name: récupérer le code
         uses: actions/checkout@v4
