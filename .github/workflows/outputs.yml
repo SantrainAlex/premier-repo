@@ -1,6 +1,14 @@
-name: Démo outputs
+name: Workflow réutilisé
 run-name: "Exécution du workflow ${{github.workflow}} pour le commit ${{github.event.head_commit.message}}"
-on: push
+on:
+  workflow_call:
+    outputs:
+      variable1:
+        description: Premier output
+        value: ${{jobs.job1.outputs.sortie1}}
+      variable2:
+        description: Second output
+        value: ${{jobs.job1.outputs.sortie2}}
 jobs:
   job1:
     runs-on: ubuntu-latest
