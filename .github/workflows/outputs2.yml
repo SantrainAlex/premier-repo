@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: premier-job
     steps:
-      - run: run ${{premier-job.outputs.variable1}} ${{premier-job.outputs.variable1}}
+      - run: run ${{needs.premier-job.outputs.variable1}} ${{needs.premier-job.outputs.variable1}}
