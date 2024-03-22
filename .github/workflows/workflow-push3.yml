@@ -1,4 +1,4 @@
-name: Workflow lors d'un push2
+name: Workflow lors d'un push3
 on: push
 jobs:
   mon_job:
@@ -10,17 +10,18 @@ jobs:
       - name: récupérer le code
         uses: actions/checkout@v4
       - name: cache npm
+        id: cache-node_modules
         uses: actions/cache@v4
         with:
-          path: ~/.npm
+          path: node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
-
         #voir aussi: le cache de actions/setup-node
         #-name Setup Node.js
         # uses: actions/setup-node@v4
         #with:
         # cache: "npm"
-      - name: installation des nodes_modules
+      - name: installation des nodes_modules #(selement si il sont pas déja présent)
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
       - name: build
         run: npm run build
