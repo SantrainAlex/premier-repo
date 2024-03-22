@@ -2,6 +2,8 @@ name: Workflow lors d'un push2
 on: push
 jobs:
   mon_job:
+    outputs:
+      statut: ${{steps.test.outcome}}
     name: Build teste et run mon app
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +27,6 @@ jobs:
       - id: test
         name: set test
         run: npm run test
-      - run: echo ${{steps.test.outcome}}
       - name: start
         run: npm run start
       - name: Sommaire
@@ -39,4 +40,4 @@ jobs:
       - name: test
         run: echo "$NEEDS_JSON"
         env:
-          NEEDS_JSON: ${{toJSON(needs.mon_job.result)}}
+          NEEDS_JSON: ${{toJSON(needs.mon_job.outputs.statut)}}
